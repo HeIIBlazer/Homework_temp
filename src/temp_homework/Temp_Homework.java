@@ -1,4 +1,3 @@
-
 package temp_homework;
 
 
@@ -57,46 +56,46 @@ public class Temp_Homework {
         }
     System.out.print("Введите месяц в виде числа: ");
     int month =scanner.nextInt();
-    System.out.print("Введите День: ");
+    System.out.print("Введите день: ");
     int Day =scanner.nextInt();
     month-=1;
     int days=Day -1;
         switch (month) {
             case 0:
-                System.out.println(Day+" января было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" января "+ temp[month][days]+" градусов");
                 break;
             case 1:
-                System.out.println(Day+" февраля было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" февраля "+ temp[month][days]+" градусов");
                 break;
             case 2:
-                System.out.println(Day+" марта было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" марта "+ temp[month][days]+" градусов");
                 break;
             case 3:
-                System.out.println(Day+" апреля было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" апреля "+ temp[month][days]+" градусов");
                 break;
             case 4:
-                System.out.println(Day+" мая было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" марта "+ temp[month][days]+" градусов");
                 break;               
             case 5:
-                System.out.println(Day+" июня было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" июня "+ temp[month][days]+" градусов");
                 break;
             case 6:
-                System.out.println(Day+" июля было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" июля "+ temp[month][days]+" градусов");
                 break; 
             case 7:
-                System.out.println(Day+" августа было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" августа "+ temp[month][days]+" градусов");
                 break;
             case 8:
-                System.out.println(Day+" сентября было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" сентября "+ temp[month][days]+" градусов");
                 break;
             case 9:
-                System.out.println(Day+" октября было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" октября "+ temp[month][days]+" градусов.");
                 break; 
             case 10:
-                System.out.println(Day+" ноября было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" ноября "+ temp[month][days]+" градусов.");
                 break;
             case 11:
-                System.out.println(Day+" декабря было "+ temp[month][days]+" градусов.");
+                System.out.println(Day+" декабря "+ temp[month][days]+" градусов.");
                 break;                
         }
     int maxTemp=temp[0][0];
@@ -114,13 +113,13 @@ public class Temp_Homework {
     }
     switch(months){
         case 5:
-        System.out.println("Максимальная температура была "+maxday+" июня: "+maxTemp);
+        System.out.println("Максимальная темп. была "+maxday+" июня: "+maxTemp);
         break;
         case 6:
-        System.out.println("Максимальная температура была "+maxday+" июля: "+maxTemp);
+        System.out.println("Максимальная темп. была "+maxday+" июля: "+maxTemp);
         break;
         case 7:
-        System.out.println("Максимальная температура была "+maxday+" августа: "+maxTemp);
+        System.out.println("Максимальная темп. была "+maxday+" августа: "+maxTemp);
         break;
     }
     int minTemp=temp[0][0];
@@ -138,64 +137,64 @@ public class Temp_Homework {
     }
     switch(minmonth){
         case 0:
-        System.out.println("Минимальная температура была "+minday+" января: "+minTemp);
+        System.out.println("минимальная темп. была "+minday+" января: "+minTemp);
         break;
         case 1:
-        System.out.println("Минимальная температура была "+minday+" февраля: "+minTemp);
+        System.out.println("минимальная темп. была "+minday+" февраля: "+minTemp);
         break;
         case 11:
-        System.out.println("Минимальная температура была "+minday+" декабря: "+minTemp);
+        System.out.println("минимальная темп. была "+minday+" декабря: "+minTemp);
         break;
     }
-    int jan=0;
-    int feb=0;
-    int mart=0;
-    int apr=0;
-    int mai=0;
-    int jun=0;
-    int jul=0;
-    int aug=0;
-    int sep=0;
-    int okt=0;
-    int nov=0;
-    int des=0;
-    for(int i=0;i<temp.length;i++){
+    double[] average= new double[12];
+    for (int i=0;i<temp.length;i++){
+        int dayss=-1;
         for(int j=0;j<temp[i].length;j++){
-            jan+=temp[0][j];
-            mart+=temp[2][j];
-            mai+=temp[4][j];
-            jul+=temp[6][j];
-            aug+=temp[7][j];
-            okt+=temp[9][j];
-            des+=temp[11][j];
-        } 
+            average[i]+=(double)temp[i][j];
+            dayss=j-1;
+        }
+    average[i]=average[i]/dayss;
     }
-    for(int i=0;i<29;i++){
-        for(int j=0;j<i;j++){
-            feb+=temp[1][j];
-
-            }
-    }
-        for(int i=0;i<30;i++){
-            for(int j=0;j<i;j++){
-                apr+=temp[3][j];
-                jun+=temp[5][j];
-                sep+=temp[8][j];
-                nov+=temp[10][j];
+    System.out.println("Средняя темп в месяц");
+    for(int i=0;i<average.length;i++){
+        switch (i){
+            case 0:
+                System.out.printf(" Январь: %-4.2f%n ", average[i]);
+                break;
+            case 1:
+                System.out.printf("Февраля: %-4.2f%n ", average[i]);
+                break;
+            case 2:
+                System.out.printf("Март: %-4.2f%n ", average[i]);
+                break;
+            case 3:
+                System.out.printf("Апрель: %-4.2f%n ", average[i]);
+                break;
+            case 4:
+                System.out.printf("Май: %-4.2f%n ", average[i]);
+                break;               
+            case 5:
+                System.out.printf("Июнь: %-4.2f%n ", average[i]);
+                break;
+            case 6:
+                System.out.printf("Июль: %-4.2f%n ", average[i]);
+                break; 
+            case 7:
+                System.out.printf("Август: %-4.2f%n ", average[i]);
+                break;
+            case 8:
+                System.out.printf("Сентябрь: %-4.2f%n ", average[i]);
+                break;
+            case 9:
+                System.out.printf("Октябрь: %-4.2f%n ", average[i]);
+                break; 
+            case 10:
+                System.out.printf("Ноябрь: %-4.2f%n ", average[i]);
+                break;
+            case 11:
+                System.out.printf("Декабря: %-4.2f%n ", average[i]);
+                break;
         }
     }
-    jan=jan/31;
-    feb=feb%28;
-    mart=mart%31;
-    apr=apr%30;
-    mai=mai%31;
-    jun=jun%30;
-    jul=jul%31;
-    aug=aug%31;
-    sep=sep%30;
-    okt=okt%31;
-    nov=nov%30;
-    des=des%31;    
-    System.out.println("Cредняя темп. за январь: "+jan+", за февраль "+feb+", за март "+mart+", за апрель "+apr+", за май "+mai+", за июнь "+jun+", за июль "+jul+", за август "+aug+", за сентябрь "+sep+", за октябрь "+okt+", за ноябрь "+nov+", за декабрь "+des+"");
         }
     }
